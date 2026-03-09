@@ -19,7 +19,7 @@ public class RoomService {
             roomMusic.setMusicName("");
             roomMusic.setArtistName("");
             roomMusic.setMusicUrl("");
-            roomMusic.setCurrentTime(0);
+            roomMusic.setPlaybackTime(0);
             roomMusic.setPlaying(false);
             roomMusic.setVolume(50);
             return roomMusicRepository.save(roomMusic);
@@ -32,7 +32,7 @@ public class RoomService {
         roomMusic.setMusicName(musicName);
         roomMusic.setArtistName(artistName);
         roomMusic.setMusicUrl(musicUrl);
-        roomMusic.setCurrentTime(0);
+        roomMusic.setPlaybackTime(0);
         roomMusic.setPlaying(true);
         roomMusicRepository.save(roomMusic);
     }
@@ -43,9 +43,9 @@ public class RoomService {
         roomMusicRepository.save(roomMusic);
     }
 
-    public void updateCurrentTime(String roomId, long currentTime) {
+    public void updatePlaybackTime(String roomId, long playbackTime) {
         RoomMusic roomMusic = getRoomMusic(roomId);
-        roomMusic.setCurrentTime(currentTime);
+        roomMusic.setPlaybackTime(playbackTime);
         roomMusicRepository.save(roomMusic);
     }
 

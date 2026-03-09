@@ -86,8 +86,8 @@ public class WebSocketController {
             int volume = (int) message.get("volume");
             roomService.updateVolume(roomId, volume);
         } else if ("time".equals(action)) {
-            long currentTime = (long) message.get("currentTime");
-            roomService.updateCurrentTime(roomId, currentTime);
+            long playbackTime = (long) message.get("currentTime");
+            roomService.updatePlaybackTime(roomId, playbackTime);
         }
         
         RoomMusic roomMusic = roomService.getRoomMusic(roomId);

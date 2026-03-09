@@ -15,7 +15,7 @@ public class RoomMusic {
     private String musicName;
     private String artistName;
     private String musicUrl;
-    private long currentTime;
+    private long playbackTime;
     private boolean isPlaying;
     private int volume;
 }
